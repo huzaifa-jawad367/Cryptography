@@ -55,7 +55,7 @@ public class ColumnarCipher {
         }
 
         return grid;
-    } 
+    }
 
     public String[][] sortGrid(String[][] grid) {
         String[][] sortedGrid = new String[grid.length][grid[0].length];
@@ -91,7 +91,8 @@ public class ColumnarCipher {
                 cipher += sortedGrid[j][i];
             }
         }
-
+        // Write cipher to file
+        writeCipherToFile(cipher, "CipherText/ciphertext.txt");
         return cipher;
     }
 
