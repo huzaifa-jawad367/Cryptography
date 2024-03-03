@@ -16,7 +16,7 @@ public class BifidServer {
 
         // Encrypt message and write to file
         BifidCipher cipher = new BifidCipher();
-        String message = "HELLO WORLD";
+        String message = "In cryptography the smallest mistakes can lead to the biggest secrets";
         String encryptedMessage = cipher.encrypt(message);
         System.out.println("Encrypted Message: " + encryptedMessage);
 
