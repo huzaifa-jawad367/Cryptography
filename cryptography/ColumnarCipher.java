@@ -17,16 +17,21 @@ public class ColumnarCipher {
     }
 
     public void writeCipherToFile(String cipherText, String filePath) {
+        /* Write Cipher text to a file to store it */
         File file = new File(filePath);
         FileWriter fr = null;
         BufferedWriter br = null;
+        System.out.println("Writing cipher to file");
         try {
             fr = new FileWriter(file, true);  // 'true' will append to file, 'false' (default) overwrites the file
             br = new BufferedWriter(fr);
             br.write(cipherText);
+            // System.out.println("Cipher appended to file");
         } catch (IOException e) {
             e.printStackTrace();
+            // System.out.println("Error writing to file");
         } finally {
+            // System.out.println("Closing file writer");
             try {
                 br.close();
                 fr.close();
@@ -86,15 +91,21 @@ public class ColumnarCipher {
 
     public String toCipherText(String[][] sortedGrid) {
         String cipher = "";
-        for (int i = 0; i < sortedGrid.length; i++) {
-            for (int j = 0; j < sortedGrid[i].length; j++) {
+        for (int i = 0; i < sortedGrid[0].length; i++) {
+            for (int j = 0; j < sortedGrid.length; j++) {
                 cipher += sortedGrid[j][i];
             }
         }
-        // Write cipher to file
-        writeCipherToFile(cipher, "CipherText/ciphertext.txt");
         return cipher;
     }
 
+    public String encrypt(String message, String key) {
+        String[][] grid = GridFormation(message);
+        String[][] sortedGrid = sortGrid(grid);
+        cipher = toCipherText(sortedGrid);
+        // Write cipher to file
+        writeCipherToFile(cipher, "ciphertext.txt");
+        return cipher;
+    }
 
 }
