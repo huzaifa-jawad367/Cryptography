@@ -25,7 +25,7 @@ public class PolybiusSquare {
             letter = 'I';
         }
 
-        int[] coordinates = new int[2]; // [row, col]
+        int[] coordinates = new int[2];
         for (int row = 0; row < 5; row++) {
             for (int col = 0; col < 5; col++) {
                 if (square[row][col] == letter) {
