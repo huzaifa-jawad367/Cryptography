@@ -7,10 +7,9 @@ import cryptography.BifidCipher;
 
 public class BifidServer {
     public static void main(String[] args) throws IOException {
-        int port = 1234; // Port number
+        int port = 1234;
         ServerSocket serverSocket = new ServerSocket(port);
         System.out.println("Server started. Waiting for connection...");
-
         Socket socket = serverSocket.accept();
         System.out.println("Connected to client.");
 

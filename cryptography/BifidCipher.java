@@ -12,14 +12,15 @@ public class BifidCipher {
         StringBuilder firstPart = new StringBuilder();
         StringBuilder secondPart = new StringBuilder();
 
-        // Convert plaintext to coordinates
+        // char[] split_plaintext = plaintext.toUpperCase().replaceAll("[^A-Z]", "").toCharArray();
+        // Lets convert the plaintext to coordinates
         for (char c : plaintext.toUpperCase().replaceAll("[^A-Z]", "").toCharArray()) {
             int[] coords = square.getCoordinates(c == 'J' ? 'I' : c);
             firstPart.append(coords[0] + 1);
             secondPart.append(coords[1] + 1);
         }
 
-        // Combine the coordinates and convert back to text
+        // Get the coordinates and convert back to text
         String combined = firstPart.toString() + secondPart.toString();
         StringBuilder ciphertext = new StringBuilder();
         for (int i = 0; i < combined.length(); i += 2) {

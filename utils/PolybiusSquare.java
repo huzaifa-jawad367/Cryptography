@@ -9,7 +9,7 @@ public class PolybiusSquare {
 
     private void initializeSquare() {
         square = new char[5][5];
-        String alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"; // Note: 'J' is omitted
+        String alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
 
         int alphabetIndex = 0;
         for (int row = 0; row < 5; row++) {
@@ -20,7 +20,7 @@ public class PolybiusSquare {
     }
 
     public int[] getCoordinates(char letter) {
-        // Handling 'J' as 'I'
+        // J will be equated to I in terms of coordinates
         if (letter == 'J') {
             letter = 'I';
         }
@@ -35,7 +35,7 @@ public class PolybiusSquare {
                 }
             }
         }
-        return null; // Letter not found (should not happen with a valid input)
+        return null;
     }
 
     public char getLetter(int row, int col) {

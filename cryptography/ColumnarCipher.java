@@ -23,7 +23,7 @@ public class ColumnarCipher {
         BufferedWriter br = null;
         System.out.println("Writing cipher to file");
         try {
-            fr = new FileWriter(file, true);  // 'true' will append to file, 'false' (default) overwrites the file
+            fr = new FileWriter(file, true);  // 'true': append to file 'false': overwrites the file
             br = new BufferedWriter(fr);
             br.write(cipherText);
             // System.out.println("Cipher appended to file");
@@ -107,5 +107,4 @@ public class ColumnarCipher {
         writeCipherToFile(cipher, "ciphertext.txt");
         return cipher;
     }
-
 }
